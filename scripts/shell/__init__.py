@@ -4,13 +4,20 @@ from sys import argv
 
 
 def main():
-    dotenv.load_dotenv()
+    try:
+        dotenv.load_dotenv()
+    except:
+        pass
+    try:
+        dotenv.read_dotenv()
+    except:
+        pass
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "momemntum_django.settings")
     import django
 
     django.setup()
-    
+
     command = argv[1]
     if command == "createsuperuser":
         username = argv[2]

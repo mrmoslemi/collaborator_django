@@ -8,10 +8,14 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-env_file = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.realpath(__file__))), ".env"
-)
-dotenv.load_dotenv(env_file)
+try:
+    dotenv.load_dotenv()
+except:
+    pass
+try:
+    dotenv.read_dotenv()
+except:
+    pass
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
