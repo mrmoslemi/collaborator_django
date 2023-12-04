@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 worker_ready() {
-    celery -A momentum_django inspect ping
+    celery -A collaborator_django inspect ping
 }
 
 until worker_ready; do
@@ -13,4 +13,4 @@ until worker_ready; do
 done
 >&2 echo 'Celery workers is available'
 
-celery -A momentum_django  flower
+celery -A collaborator_django  flower

@@ -25,7 +25,7 @@ class BothHttpAndHttpsSchemaGenerator(OpenAPISchemaGenerator):
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="momentum_django API",
+        title="collaborator_django API",
         default_version="0.0.1",
     ),
     generator_class=BothHttpAndHttpsSchemaGenerator,

@@ -43,7 +43,7 @@ def print_commands():
 
 def main():
     dotenv.load_dotenv()
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "momentum_django.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
     django.setup()
     if len(sys.argv) < 2:
         print_commands()

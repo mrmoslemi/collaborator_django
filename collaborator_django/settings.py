@@ -49,8 +49,8 @@ else:
     ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = "authentication.User"
-ROOT_URLCONF = "momentum_django.urls"
-WSGI_APPLICATION = "momentum_django.wsgi.application"
+ROOT_URLCONF = "collaborator_django.urls"
+WSGI_APPLICATION = "collaborator_django.wsgi.application"
 APPEND_SLASH = True
 INSTALLED_APPS = [
     "django.contrib.admin",

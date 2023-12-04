@@ -14,9 +14,9 @@ env_file = os.path.join(
 dotenv.load_dotenv(env_file)
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "momentum_django.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
 
-app = Celery("momentum_django")
+app = Celery("collaborator_django")
 
 app.config_from_object("django.conf:settings", namespace="CELERY")
 

@@ -1,5 +1,5 @@
 """
-ASGI config for momentum_django project.
+ASGI config for collaborator_django project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

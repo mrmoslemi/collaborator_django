@@ -6,6 +6,6 @@ from .setup_urls import setup
 urlpatterns = []
 if settings.ENV.API_VERSION == "v1":
     urlpatterns.append(
-        path("v1/", include("momentum_django.version_urls.v1", namespace="v1"))
+        path("v1/", include("collaborator_django.version_urls.v1", namespace="v1"))
     )
 urlpatterns = setup(urlpatterns)

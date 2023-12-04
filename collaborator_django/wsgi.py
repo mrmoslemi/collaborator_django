@@ -1,5 +1,5 @@
 """
-WSGI config for momentum_django project.
+WSGI config for collaborator_django project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "momentum_django.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
 
 application = get_wsgi_application()
