@@ -4,14 +4,7 @@ from sys import argv
 
 
 def main():
-    try:
-        dotenv.load_dotenv()
-    except:
-        pass
-    try:
-        dotenv.read_dotenv()
-    except:
-        pass
+    dotenv.load_dotenv()
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "momemntum_django.settings")
     import django

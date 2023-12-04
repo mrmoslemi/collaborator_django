@@ -5,14 +5,7 @@ import dotenv
 
 
 def main():
-    try:
-        dotenv.load_dotenv()
-    except:
-        pass
-    try:
-        dotenv.read_dotenv()
-    except:
-        pass
+    dotenv.load_dotenv()
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
     try:
