@@ -46,7 +46,7 @@ if not ENV.IS_LOCAL:
 else:
     DEBUG = True
     CORS_ALLOW_ALL_ORIGINS = True
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["*", "217.197.97.121"]
 
 AUTH_USER_MODEL = "authentication.User"
 ROOT_URLCONF = "collaborator_django.urls"
