@@ -104,6 +104,38 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "propagate": True,
+        },
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "myproject.custom": {
+            "handlers": ["console"],
+            "level": "INFO",
+        },
+    },
+}
 CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379")
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_TIMEZONE = "Asia/Tehran"
