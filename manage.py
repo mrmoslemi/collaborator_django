@@ -5,7 +5,16 @@ import dotenv
 
 
 def main():
-    dotenv.load_dotenv()
+    try:
+        dotenv.load_dotenv()
+    except:
+        pass
+    try:
+        from django.conf import settings
+
+        dotenv.read_dotenv(os.path.join(settings.BASE_DIR, ".env"))
+    except:
+        pass
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
     try:
