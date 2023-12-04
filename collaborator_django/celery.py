@@ -5,6 +5,7 @@ import os
 
 from celery import Celery
 import warnings
+from pathlib import Path
 
 warnings.filterwarnings("ignore")
 try:
@@ -12,14 +13,13 @@ try:
 except:
     pass
 try:
-    from django.conf import settings
+    dotenv.read_dotenv(os.path.join(Path(__file__).resolve().parent.parent, ".env"))
 
-    dotenv.read_dotenv(os.path.join(settings.BASE_DIR, ".env"))
 except:
     pass
 
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
+
 
 app = Celery("collaborator_django")
 

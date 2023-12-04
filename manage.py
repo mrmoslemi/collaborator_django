@@ -2,6 +2,7 @@
 import os
 import sys
 import dotenv
+from pathlib import Path
 
 
 def main():
@@ -10,13 +11,11 @@ def main():
     except:
         pass
     try:
-        from django.conf import settings
-
-        dotenv.read_dotenv(os.path.join(settings.BASE_DIR, ".env"))
+        dotenv.read_dotenv(os.path.join(Path(__file__).resolve().parent, ".env"))
     except:
         pass
-
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "collaborator_django.settings")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
