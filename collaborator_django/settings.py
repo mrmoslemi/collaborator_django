@@ -39,6 +39,8 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+ALLOWED_HOSTS = ["*", "217.197.97.121"]
+
 if not ENV.IS_LOCAL:
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = True
@@ -46,7 +48,6 @@ if not ENV.IS_LOCAL:
 else:
     DEBUG = True
     CORS_ALLOW_ALL_ORIGINS = True
-    ALLOWED_HOSTS = ["*", "217.197.97.121"]
 
 AUTH_USER_MODEL = "authentication.User"
 ROOT_URLCONF = "collaborator_django.urls"
