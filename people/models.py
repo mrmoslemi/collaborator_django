@@ -8,6 +8,9 @@ class Person(models.Model):
         to="authentication.User", related_name="person", on_delete=models.CASCADE
     )
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Team(models.Model):
     name = models.CharField()
@@ -16,6 +19,9 @@ class Team(models.Model):
         related_name="teams",
         through="Membership",
     )
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class Membership(models.CreatableModel):
